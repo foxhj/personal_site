@@ -1,0 +1,77 @@
+{% extends 'main.html'%}
+{% load static %}
+{% block content %}
+    <style>
+        .headshot-container {
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            border-bottom: 1px solid white;
+            max-width: 66%;
+        }
+        
+        .headshot-container img {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .info-container a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .info-container a:hover {
+            color: red;
+        }
+
+        .info-container h1 {
+            font-size: 70px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .content-container {
+            max-width: 66%;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .content-container h1 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .shell {
+            color: rgb(0, 190, 16);
+        }
+
+        .p-container {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+    </style>
+    <div class="headshot-container">
+        <img src="{% static 'img/fox.png' %}" alt="Fox J.">
+        <div class="info-container">
+            <h1>Fox Johnston</h1>
+            <h2><a href="mailto:foxhj@protonmail.com">mailto:foxhj@protonmail.com</a></h2>
+            <h2>(423) 432-9410</h2>
+        </div>
+    </div>
+    <div class="content-container">
+        <h1><span class="shell">foxhj@main$ >>> </span>whoami</h1>
+        <div class="p-container">
+            <p>I’m a seasoned surgical device sales consultant and have had the privilege of wearing many hats in the medical sector, learning the ropes from various angles since 2017. It’s been a journey filled with immense learning, challenges, and eye-opening moments. Among these, one particular issue has tugged at my heartstrings more than others: the unsettling impact of cyberattacks. Witnessing their devastating effects not just on businesses but, far more importantly, on the health and safety of individuals, has been both sobering and a call to action.</p>
+            <p>These experiences have driven me toward a path I never expected to take. With a deep sense of responsibility, I find myself drawn to the world of information security, driven by a simple yet profound desire to do my part in protecting the vulnerable from such invisible threats. This shift in focus isn't just about a career change; it's about aligning my work with values that resonate with me on a personal level—compassion, diligence, and a relentless pursuit of making a tangible difference.</p>
+            <p>As I delve into the realm of security, I'm reminded daily of the value of humility, continuous learning, and creative problem-solving. Every day is a lesson in itself, presenting new challenges and opportunities to grow. And while the path ahead is filled with unknowns, I'm excited to embark on this journey, hoping to contribute, even in a small way, to a safer, more secure world.</p>
+            <p>This space is for me to share those learnings, reflections, and, hopefully, insights that might resonate with or even help others navigate similar paths. It’s about connecting over shared concerns and aspirations, exploring solutions, and growing together.</p>    
+        </div>
+    </div>
+{% endblock %}

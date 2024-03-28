@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+    .form-container {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+        margin: 20px auto;
+        border: 1px solid white;
+    }
+
+    .form-container h1 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: 5px auto;
+    }
+
+    .form-container form label {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .form-container form input {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .form-container form input[type="text"],
+    .form-container form input[type="email"] {
+        font-size: 18px;
+        background-color: black;
+        color: white
+    }
+
+    .form-container textarea {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 16px;
+        background-color: black;
+        color: white;
+    }
+
+    .form-container input[type="submit"] {
+        width: 65%;
+        margin: 20px auto;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 0;
+        background-color: black;
+        color: white;
+    }
+
+    .form-container input[type="submit"]:hover {
+        background-color: rgb(0, 160, 0);
+    }
+</style>
+<br>
+<div class="form-container">
+    <h1>Send a message to Fox:</h1>
+    <form>
+        <label for="">Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="email">Email Address:</label>
+        <input type="text" name="email" id="email">
+        <label for="subject">Subject:</label>
+        <input type="email" name="subject" id="subject">
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" rows="10"></textarea>
+        <input type="submit" name="submit" id="submit" value="Send Message">
+    </form>
+</div>
+{% endblock %}
