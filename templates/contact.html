@@ -61,20 +61,92 @@
     .form-container input[type="submit"]:hover {
         background-color: rgb(0, 160, 0);
     }
+    .key-container {
+        width: 600px;
+        font-size: 12px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .key-container pre {
+        display: flex;
+        justify-content: center;
+    }
 </style>
 <br>
 <div class="form-container">
-    <h1>Send a message to Fox:</h1>
-    <form>
-        <label for="">Name:</label>
+    <h1>Send me a message:</h1>
+    {% csrf_token %}
+    <form action="/submit-message/" method="post">
+        <label for="name">Name:</label>
         <input type="text" name="name" id="name">
         <label for="email">Email Address:</label>
-        <input type="text" name="email" id="email">
+        <input type="email" name="email" id="email">
         <label for="subject">Subject:</label>
-        <input type="email" name="subject" id="subject">
+        <input type="text" name="subject" id="subject">
         <label for="message">Message:</label>
         <textarea name="message" id="message" rows="10"></textarea>
         <input type="submit" name="submit" id="submit" value="Send Message">
     </form>
+</div>
+<br>
+<div class="key-container">
+    <h1>Encrypt it if you want to:</h1>
+    <pre>
+        <code>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQINBGYGCIoBEADPqo1EQvKJ6m5hY78kto2oDpX9jOuna5A1bcnWeLDHGi76ufpQ
+pOrlwyso2WGiEnET82YNVw96bRqBnUUqYIDpMcxFD/siN8cu6KdvM3OEifPfvJRF
+Ow61IgpUK4wwExdfb7v/RdceUWjPNntulI1x7ajc/HUUddb1dRx59zv2hPB+qEAg
+YkjkuIwuI1lWNO36TGFUSuHQEB9evMwPhVJnthMJM7SdbnHnUuqAWeq+cupbUYlu
+QTNw+MI+qu/U4C8R8/pX1NGYkRHh1sR4umc0bU8V2u/k3GHLp1k6PYgKJ4rZcI33
+wkxT1GX/CyWcme/YYW23vMhNTEdDfKH8y9PDV9v5Iv67VcNO1ENayOmjnilWsuhs
+1rf0tPe5QgEJZYNyG3JG3yroPLdD6a7n7S8/L0dZYzRAAeH/s9RsHZBjM7Oh6QjH
+/HkJYWFUK8dsGy0LYFEuT4En7MhWKVxYEmBxkMgrhQSdtqft9P3zJKMtroL4/h9P
+Q3v7z5tOYmBzsDUXNsF0ZQm82MAtkeUdCrPxCqI++9MOjRY2zLyuqzbXI0QtfzZX
+ucFvMY8pvPFqmqH6WurLIHSfYXhxTAxzsv7LiIPCmb3oGzQnCTcXo+ggkTDyyXlb
+j02hqP8wQc/OXmsNzNJeUKnJ6dvOuBKs4HjK2Cqn0wgXnUKlL/Bh6DmT+QARAQAB
+tCNGb3ggSm9obnN0b24gPGZveGhqQHByb3Rvbm1haWwuY29tPokCUQQTAQgAOxYh
+BEgAZZbrkH26FyBdlHKrpp10IJp8BQJmBgiKAhsDBQsJCAcCAiICBhUKCQgLAgQW
+AgMBAh4HAheAAAoJEHKrpp10IJp89PkQAMb9TEvf7CWJGVoQn7fYIcXK+CnyO/sA
+3U1WRIrOw61W/VmuFn8a92q2yjLO5wWS0NvFELd/cZZQBuTsr2diw5OZZa0vnCeD
+dlMcWhOnKKSNNf0SFXx/jhRsZRi1x12b68oKsSuyW5gqSb8i4YxSlsVJdF5UQEqK
+l2WAZxyN8pjBHO3EugHB/VkuEKycEvUcuSWwX7FD3How3VVfiKzymslfzs6IOwTW
+AJj37AN4CsVnRtnWa0YpxHg8EVk3MpAsiaOyBKxiufPTe1s2WTfiKgzAQC4MFxB1
+b+d4dt5Q7kIv6GisGA13gyoF/e58YEpwBaIt/8yHWJu0AF34+awiiiUfsAz40ZuH
+wL1ACTmCwiFpyEBsW2PWIAPfsmi23VkE6zWWPHDseM1QT9MiKEx+JL8TPaUkUZfZ
+TR+5Aw5pMBGhMQB1GWVBzq+HNCrpHVQYelvzM/gfWIt50RZwrsTVGi0v99EurqaE
+nU7on9ce3JBX5QbKwXb2Jb1t1gqDp8JJe734QT6r/7y92RUqyIDArcSOod70ifkR
+QuS0HSaJRy4wnVQsAp9ro7yGA/jApn/6h6NVdY9GaaB7cDae3QMSeftnoE6Rdj2x
+RFs6kYJj1MMCiagqvbVIJiDJkRTlsJT4M55XRYQInEhzGZ967qlxPUUFi/gqYzCo
+kBXQMB0VB0f4uQINBGYGCIoBEADGIQC3JxWNqsnSiGPaOp+D2aWlwE1m0DqsvCpe
+B4fK6LvAGPbnI74iaGYujCY9p2ALszCxPPhKqIThbSe/xyRFVQb23EZ2qqGrc1rt
+m3VZXjMGAUb8y8KNFv0W3QdS0TCvcgzgc0AbU8Cg27+pi8fT6aYaxpgs38TRisiQ
+WmDY+OKIfHBmnL1nncaIm12QNBBWN+zLtSHmRRjX4utyKXP1ue9B/lFw0LmtnARD
+gphKMboChfWSzPP8MpVPm7W0Heml5TNGStIYO6NVHZYrBg45SBNolXUnJ3UP3smQ
+4VZCQFCyqsZOYwaRw8/Nn1atyqxiAkGTuFNIMgDWmCwgiUFuaab/VSEAUJt7D1FP
+dum/8ozShWOStpQ9BwS6r53c8ku2XQUtSobYtHagwTSTkF+gKpScACHMloHgqkP1
+CXnxRNkijRngkrD8hdcAOcITZN9sNOKARQGZ9y0uZPS4TjSwpAnItvOaxkmH5Qkt
+hgCvcpH0GU/S6jo+dvnyKpd4Dx2a2G/AE2mBjUfxkHN1AjG9AxaVpFEt6C7BdBPu
+LAts1tbcoGSgplBeWUZOR1kuQpH0rLnrMfpdm4vT3xM63YnBc//jXPSvPX2ee5pl
+EvYtJ33cVzeX9iDZMi/LuFgX8esGCs8Tgl/Y3YSBBu/oyWSZXeWznLsl+RLVviYD
+lEd9pQARAQABiQI2BBgBCAAgFiEESABlluuQfboXIF2UcqumnXQgmnwFAmYGCIoC
+GwwACgkQcqumnXQgmnz61w//UdculZCJEdI+Ig+gVn2Wvczy+YNDFTrpX+2AeHBB
+hBDjfDfAbR9F+uWGXneyXb/L0E2pK9bk224nDUisRQLN9o78+XKt5lgMrxJeLB2A
+2h8kxpFLqDEFaLWl52gyI2Y0cJzQLO231WVd3pN+zlQNRAz9dmZcG2OcrioB0QoJ
+XeTfaA8xyfFv3H3BblA9YO+xK59BN/5n37bxDH4QfX0Y2/CE0Pd14xNQgn/+9lpD
+6zqsf4cEgjUTrRivduOgvNCLYfouhwDKx55eU4JEAqEdjnAnKk74OpQjjpDT7QxU
+Xxe69DB6LBmOWPWOH3MACrYvkbabR8WnhjcnMw3MnOMkW6zX+53SKPpKC6J/5RBC
+01cDBzJz5dvAHpuFcxqaONMQCeLb4TibpevYbtlh+G96ggRBiDlbJx33jlYrFeqX
+IqUUMx3Swtl9dsxNwA+DpzQkNlb+jpp3+QppYnUCEFEk9NJO/Pcqb2wvYqRcV4id
+jWTSpcCx7E1zDu02BmqCQ0tS3BITUfgoO+WQvJp/7gBMY843NjPyMowhyc0IEkJL
+LotZUIjJXVl4edwCQRwWNDoOIUlJhz9cbeX77Vsk9dw8w6zKrXptV+2jk8A4Oxot
+yCG8HMl1yq4b3KL/pWe9jXZ8GmsDcnBd4BgBijVrKfELHjGY8GVSrRAUKlNYcFuQ
+L7M=
+=pqeb
+-----END PGP PUBLIC KEY BLOCK-----
+        </code>
+    </pre>
 </div>
 {% endblock %}
